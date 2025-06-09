@@ -23,6 +23,20 @@ def get_avg_grade(grades, num_students):
     y = x / num_students if num_students > 0 else 0
     print("Average grade: " + str(y))
 
+def get_heighest_grade(grades, num_students):
+    if num_students == 0:
+        return None
+    highest = 0
+    for i in range(num_students):
+        if grades[i] > highest:
+            highest = grades[i]
+    return highest
+
 
 display_student_summary()
 get_avg_grade(grades, num_students)
+get_heighest_grade(grades, num_students)
+highest = get_heighest_grade(grades, num_students)
+for i in range(num_students):
+    if grades[i] == highest:
+        print("Student with highest grade: " + student[i] + " with grade: " + str(highest))

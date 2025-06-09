@@ -33,6 +33,14 @@ def get_heighest_grade(grades, num_students):
     return highest
 
 
+def count_passed(passed, num_students):
+    count = 0
+    for i in range(num_students):
+        if passed[i] >= 60:
+            count += 1
+    return count
+
+
 display_student_summary()
 get_avg_grade(grades, num_students)
 get_heighest_grade(grades, num_students)
@@ -40,3 +48,5 @@ highest = get_heighest_grade(grades, num_students)
 for i in range(num_students):
     if grades[i] == highest:
         print("Student with highest grade: " + student[i] + " with grade: " + str(highest))
+count_passed(grades, num_students)
+print("Number of students who passed: " + str(count_passed(grades, num_students)))
